@@ -112,7 +112,7 @@ Rail transport, Roads and Road transport
 			<xsd:restriction base="VersionOfObjectRefStructure">
 				<xsd:attribute name="ref" type="CustomerIdType" use="required">
 					<xsd:annotation>
-						<xsd:documentation>Identifier of a CUSTOMER.</xsd:documentation>
+						<xsd:documentation>Identifier of a customer</xsd:documentation>
 					</xsd:annotation>
 				</xsd:attribute>
 			</xsd:restriction>
