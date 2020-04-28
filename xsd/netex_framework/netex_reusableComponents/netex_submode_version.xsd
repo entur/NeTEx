@@ -77,6 +77,11 @@ Rail transport, Roads and Road transport
 		<xsd:documentation>SUBMODE types for NeTEx Network Exchange.</xsd:documentation>
 	</xsd:annotation>
 	<!--======Modes===================================================================================-->
+	<xsd:element name="AllSubmode" type="AllSubmodeStructure">
+		<xsd:annotation>
+			<xsd:documentation>A submode for both Public and Private Transport MODEs.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
 	<xsd:complexType name="AllSubmodeStructure">
 		<xsd:annotation>
 			<xsd:documentation>Type for all Sub modes.</xsd:documentation>
