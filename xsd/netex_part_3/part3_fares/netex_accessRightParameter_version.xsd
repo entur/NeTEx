@@ -62,7 +62,7 @@
 				</Date>
 				<Date>
 					<Modified>2019-03-01</Modified>Add missing elements to GenericParameterAssignment
-					    *	UK-33 Add TariffRef	as a GenericParameterAssignment parameter
+					    *	UK-33 Add TariffRef as a GenericParameterAssignment parameter
 					   *	UK80 TypeOfConcession, TypeOfUsageParameter,  VehicleType   TypeOfLineRef as GenericParameterAssignment parameters
 				</Date>
 				<Date>
@@ -75,21 +75,23 @@
 					<Modified>2019-03-09</Modified>EURA-54 Add a PassengerSeatRef to
 				</Date>
 				<Date>
-					<Modified>2019-03-14</Modified>UK-41  Also LimitationSelectionType Add an additional functional operator to GenericParameterAssignment  to clarify use of groups :  oneOf /  someOf/  allOf
-
+					<Modified>2019-03-14</Modified>UK-41  Also LimitationSelectionType Add an additional functional operator to GenericParameterAssignment  to clarify use of groups :  oneOf / someOf / allOf
 					* Add  new ___FareStructureValidityParametersGroup___ to validity paarmaters with new attributes   ___TypeOfTariffRef___,   ___TypeOfFareStructureFactor___,  ___TypeOfFarFresStructureFactorRef___,
-					  * Extend  ___FareProduct ValidityParametersGroup___  to validity paramaters  with new attributes   ___TypeOfPriceingRuleRef___,   ___ChargingMethodRef___, ___TypeOfPaymentMethodRef___, ___TypeOfMachineReadability___, ___TypeOfFareTableRef.___  TypeofMachineReadabilityRef.
-					  * Add  new ___SeatingValidityParametersGroup___ with new attributes   ___TrainElementRef___,    ___TrainComponentLabelAssignmentRef___.
-					 * Also add OperatingPeriod Ref to Temporal  validity Parameters
-					 * Also Fix change choice of TrainNumber etc to selection,
+					* Extend  ___FareProduct ValidityParametersGroup___  to validity paramaters  with new attributes   ___TypeOfPriceingRuleRef___,   ___ChargingMethodRef___, ___TypeOfPaymentMethodRef___, ___TypeOfMachineReadability___, ___TypeOfFareTableRef.___  TypeofMachineReadabilityRef.
+					* Add  new ___SeatingValidityParametersGroup___ with new attributes   ___TrainElementRef___,    ___TrainComponentLabelAssignmentRef___.
+					* Also add OperatingPeriod Ref to Temporal  validity Parameters
+					* Also Fix change choice of TrainNumber etc to selection,
 				</Date>
 				<Date>
 					<Modified>2019-03-26</Modified>NL-27 CD #58 Add default TypeOfProductCategory and TypeOfService to Line:
 					Move TypeOfProductCategory amnd TypeOfService from netex_journey_version  to  Framework reusable components (netex_travelRights_version)  so they are visible from part 1
-		  	Can  therefore drop include of netex_travelRights_version from 	  netex_accessRightParameter_version.xsd  .
+		  	Can  therefore drop include of netex_travelRights_version from netex_accessRightParameter_version.xsd.
 				</Date>
 				<Date>
-					<Modified>2019-04-18</Modified>FIX  - SUpport Place to Place travel (ADDRESS and TOPOGRAPHICAL PLACE) : Add AddressRef ,  TopoographiPlaceRef and PlaceUseEnum.
+					<Modified>2019-04-18</Modified>FIX - Support Place to Place travel (ADDRESS and TOPOGRAPHICAL PLACE): Add AddressRef ,  TopoographiPlaceRef and PlaceUseEnum.
+				</Date>
+				<Date>
+					<Modified>2020-12-08</Modified>FIX - Add optional TimebandRef, UicOperatingPeriodRef and ServiceCalendarRef to TemporalValidityParametersGroup
 				</Date>
 				<Description>
 					<p>NeTEx is a European CEN standard for the exchange of Public Transport data including timetables.</p>
@@ -330,10 +332,8 @@ Rail transport, Roads and Road transport
 			<xsd:element ref="TimebandRef" minOccurs="0"/>
 			<xsd:element ref="GroupOfTimebandsRef" minOccurs="0"/>
 			<xsd:element ref="OperatingDayRef" minOccurs="0"/>
-			<xsd:choice>
-				<xsd:element ref="OperatingPeriodRef" minOccurs="0"/>
-				<xsd:element ref="UicOperatingPeriodRef" minOccurs="0"/>
-			</xsd:choice>
+			<xsd:element ref="OperatingPeriodRef" minOccurs="0"/>
+			<xsd:element ref="UicOperatingPeriodRef" minOccurs="0"/>
 			<xsd:element ref="ServiceCalendarRef" minOccurs="0"/>
 			<xsd:element ref="ValidityConditionRef" minOccurs="0"/>
 		</xsd:sequence>
