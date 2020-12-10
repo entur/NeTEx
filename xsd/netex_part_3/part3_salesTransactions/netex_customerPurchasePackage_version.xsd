@@ -47,6 +47,9 @@
 				<Date>
 					<Modified>2019-04-06</Modified>TN6 distinguish between RequestedTravelSpoeifcation and Offered TravelSpecication.  	  Remodularise to separate out from Sales Transaction
 				</Date>
+				<Date>
+					<Modified>2020-12-10</Modified>Added time and place for CustomerPurchasePackageElementAccess
+				</Date>
 				<Description>
 					<p>NeTEx is a European CEN standard for the exchange of Public Transport data including timetables.</p>
 					<p>This sub-schema describes the CUSTOMER PURCHASE PACKAGE types.</p>
@@ -775,6 +778,13 @@ Rail transport, Roads and Road transport
 					<xsd:documentation>Whether the element has been used </xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
+			<xsd:element name="AccessTime" type="xsd:dateTime" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>When this element was accessed</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element ref="PlaceRef" minOccurs="0"/>
+			<xsd:element ref="ServiceJourneyRef" minOccurs="0"/>
 			<xsd:element name="validityParameterAssignments" type="customerPurchaseParameterAssignments_RelStructure" minOccurs="0">
 				<xsd:annotation>
 					<xsd:documentation>PARAMETER ASSIGNMENTs applying to  CUSTOMER PURCHASE PACKAGE ELEMENT ACCESS. </xsd:documentation>
