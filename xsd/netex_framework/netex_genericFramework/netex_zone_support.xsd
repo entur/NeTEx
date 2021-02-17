@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsd:schema xmlns="http://www.netex.org.uk/netex" xmlns:netex="http://www.netex.org.uk/netex" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:core="http://www.govtalk.gov.uk/core" targetNamespace="http://www.netex.org.uk/netex" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0" id="netex_zone_version">
 	<xsd:include schemaLocation="netex_pointAndLink_support.xsd"/>
+	<xsd:include schemaLocation="../../netex_part_1/part1_tacticalPlanning/netex_fareZone_version.xsd"/>
 	<xsd:annotation>
 		<xsd:appinfo>
 			<Metadata xmlns="http://www.govtalk.gov.uk/CM/gms-xs">
@@ -19,6 +20,9 @@
 				</Date>
 				<Date>
 					<Modified>20109-02-25</Modified>UK-05 Fix: Introduce a dummy TariffzoneRef so that Fare zone can be a specialisation of TariffZone. Workaround to XMLSPY issue.
+				</Date>
+				<Date>
+					<Modified>2021-02-17</Modified>Add explicit FareZoneRef for StopPlace/Quay tariffZones
 				</Date>
 				<Description>
 					<p>NeTEx - Network Exchange. This subschema defines ZONE types.</p>
@@ -127,7 +131,10 @@ Rail transport, Roads and Road transport
 		<xsd:complexContent>
 			<xsd:extension base="oneToManyRelationshipStructure">
 				<xsd:sequence>
-					<xsd:element ref="TariffZoneRef" maxOccurs="unbounded"/>
+					<xsd:choice maxOccurs="unbounded">
+						<xsd:element ref="TariffZoneRef" />
+						<xsd:element ref="FareZoneRef" />
+					</xsd:choice>
 				</xsd:sequence>
 			</xsd:extension>
 		</xsd:complexContent>
