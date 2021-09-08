@@ -1066,6 +1066,20 @@ Tickets will be issued for the distance traveled by a single train and the conti
 							<HasFee>true</HasFee>
 							<RefundBasis>perPerson</RefundBasis>
 						</Refunding>
+						<Reverting version="any" id="tfc:TFC@Common@condition@reverting_conductor">
+							<!-- reverting rules for conductor -->
+							<TypeOfResponsibilityRoleRef ref="tfc:TypeOfResponsibilityRole_Conductor"/>
+							<MinimumTimeAfterUse>PT0S</MinimumTimeAfterUse> <!-- immediately after -->
+							<MaxiumTimeAfterUse>PT3M</MaxiumTimeAfterUse> <!-- up to 3 minutes after -->
+							<AllowedAfterControl>false</AllowedAfterControl> <!-- if ticket has been controlled, no reverting can be done -->
+						</Reverting>
+						<Reverting version="any" id="tfc:TFC@Common@condition@reverting_customerservice">
+							<!-- reverting rules for customer service -->
+							<TypeOfResponsibilityRoleRef ref="tfc:TypeOfResponsibilityRole_CustomerService"/>
+							<MinimumTimeAfterUse>PT0S</MinimumTimeAfterUse> <!-- immediately after -->
+							<MaxiumTimeAfterUse>PT24H</MaxiumTimeAfterUse> <!-- up to 24 hours after -->
+							<AllowedAfterControl>true</AllowedAfterControl> <!-- customer service can revert after control as well -->
+						</Reverting>
 						<!---  ===OTHER USAGE PARAMETERS =========    -->
 					</usageParameters>
 					<!-- ====CHANNELS  -->
@@ -7893,6 +7907,23 @@ c
 														<TravelDocumentRef ref="tfc_t:1267459" versionRef="EXTERNAL">Ticket number</TravelDocumentRef>
 													</travelDocuments>
 												</SalesTransaction>
+												<PurchaseFulfilmentEntry version="any" id="tfc_t:ANONYMOUS@trans12345001@purchase_fulfilment@trip@single@Bucharest+Buzau">
+													<Date>2018-07-08T01:07:03</Date>
+													<Description>Ticket fulfilment completed</Description>
+												</PurchaseFulfilmentEntry>
+												<PassengerValidateTravelEntry version="any" id="tfc_t:ANONYMOUS@trans12345001@product_validation@trip@single@Bucharest+Buzau">
+													<Description>Validation of ticket</Description>
+													<Date>2021-08-10T09:00:00Z</Date>
+													<ServiceJourneyRef ref="tfc_t:ServiceJourney:T3"/>
+													<TicketValidatorEquipmentRef ref="tfc_t:Validator123-ONBOARD"/>
+												</PassengerValidateTravelEntry>
+												<PassengerUsedSameStopEntry version="any" id="tfc_t:ANONYMOUS@trans12345001@product_duplicate_validation@trip@single@Bucharest+Buzau">
+													<Description>Attempted duplicate validation of ticket</Description>
+													<Date>2021-08-10T09:00:01Z</Date>
+													<StopPlaceRef ref="tfc_t:StopPlace:123"/>
+													<QuayRef ref="tfc_t:Quay:Q123"/>
+													<TicketValidatorEquipmentRef ref="tfc_t:Validator123123"/>
+												</PassengerUsedSameStopEntry>
 											</fareContractEntries>
 										</FareContract>
 									</fareContracts>
@@ -8000,6 +8031,24 @@ c
 											</fareContractEntries>
 										</FareContract>
 									</fareContracts>
+									<customerAccountEntries>
+										<CustomerRegistration id="tfc_cd:AC00000001@Registration" version="01">
+											<Description>Account opened</Description>
+											<Date>2005-08-08T09:00:00Z</Date>
+										</CustomerRegistration>
+										<NoAccessRightsOnAccount id="tfc_cd:AC00000001@NoAccessRightsOnAccount" version="01">
+											<Description>Account attempted validated, but no access rights were found</Description>
+											<Date>2005-08-09T09:00:00Z</Date>
+										</NoAccessRightsOnAccount>
+										<InsufficientAccessRightsOnAccount id="tfc_cd:AC00000001@InsufficientAccessRightsOnAccount" version="01">
+											<Description>Account attempted validated, but the unused access rights on the account did not match validation requirements</Description>
+											<Date>2005-08-09T09:00:00Z</Date>
+										</InsufficientAccessRightsOnAccount>
+										<CustomerDeregistration id="tfc_cd:AC00000001@Deregistration" version="01">
+											<Description>Account closed</Description>
+											<Date>2009-08-08T09:00:00Z</Date>
+										</CustomerDeregistration>
+									</customerAccountEntries>
 								</CustomerAccount>
 							</customerAccounts>
 						</Customer>
