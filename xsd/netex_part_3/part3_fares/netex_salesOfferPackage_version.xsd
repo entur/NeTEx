@@ -3,6 +3,7 @@
 <xsd:schema xmlns="http://www.netex.org.uk/netex" xmlns:netex="http://www.netex.org.uk/netex" xmlns:siri="http://www.siri.org.uk/siri" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" targetNamespace="http://www.netex.org.uk/netex" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.1" id="netex_salesOfferPackage_version">
 	<xsd:include schemaLocation="netex_salesOfferPackage_support.xsd"/>
 	<xsd:include schemaLocation="../../netex_framework/netex_reusableComponents/netex_topographicPlace_support.xsd"/>
+	<xsd:include schemaLocation="../part3_consumption/netex_consumption_version.xsd"/>
 	<!-- ======================================================================= -->
 	<xsd:include schemaLocation="netex_salesDistribution_version.xsd"/>
 	<xsd:include schemaLocation="netex_fareProduct_version.xsd"/>
@@ -110,6 +111,11 @@ Rail transport, Roads and Road transport
 					<xsd:documentation>DISTRIBUTION ASSIGNMENTS in FRAME.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
+			<xsd:element name="groupOfDistributionAssignments" type="groupsOfDistributionAssignmentsInFrame_RelStructure" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>DISTRIBUTION ASSIGNMENTS in FRAME.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
 		</xsd:sequence>
 	</xsd:group>
 	<xsd:complexType name="salesOfferPackagesInFrame_RelStructure">
@@ -168,6 +174,18 @@ Rail transport, Roads and Road transport
 			<xsd:extension base="frameContainmentStructure">
 				<xsd:sequence>
 					<xsd:element ref="DistributionAssignment" maxOccurs="unbounded"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="groupsOfDistributionAssignmentsInFrame_RelStructure">
+		<xsd:annotation>
+			<xsd:documentation>Type for containment in frame of GROUPs OF DISTRIBUTION ASSIGNMENTs.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="frameContainmentStructure">
+				<xsd:sequence>
+					<xsd:element ref="GroupOfDistributionAssignments" maxOccurs="unbounded"/>
 				</xsd:sequence>
 			</xsd:extension>
 		</xsd:complexContent>
@@ -248,6 +266,11 @@ Rail transport, Roads and Road transport
 			</xsd:element>
 			<xsd:element name="distributionAssignments" type="distributionAssignments_RelStructure" minOccurs="0"/>
 			<xsd:group ref="SalesOfferPackagePricingGroup"/>
+			<xsd:element name="elementConsumptionPolicies" type="elementConsumptionPolicies_RelStructure" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>CONSUMPTION UTLIISATION DEPENDENCIES in SALES OFFER PACKAGE.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
 			<xsd:element name="salesOfferPackageElements" type="salesOfferPackageElements_RelStructure" minOccurs="0">
 				<xsd:annotation>
 					<xsd:documentation>SALES OFFER PACKAGE ELEMENTs in SALES OFFER PACKAGE.</xsd:documentation>
@@ -621,6 +644,7 @@ Rail transport, Roads and Road transport
 				<xsd:choice maxOccurs="unbounded">
 					<xsd:element ref="DistributionAssignmentRef"/>
 					<xsd:element ref="DistributionAssignment"/>
+					<xsd:element ref="GroupOfDistributionAssignmentsRef"/>
 				</xsd:choice>
 			</xsd:extension>
 		</xsd:complexContent>
@@ -781,6 +805,83 @@ Rail transport, Roads and Road transport
 			<xsd:element ref="FulfilmentMethodRef" minOccurs="0"/>
 		</xsd:sequence>
 	</xsd:group>
+	<!-- ====GROUP OF DISTRIBUTION ASSIGNMENTs=================================================== -->
+	<xsd:simpleType name="GroupOfDistributionAssignmentsIdType">
+		<xsd:annotation>
+			<xsd:documentation>Type for identifier of a GROUP OF DISTRIBUTION ASSIGNMENTs.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="GroupOfEntitiesIdType"/>
+	</xsd:simpleType>
+	<xsd:element name="GroupOfDistributionAssignmentsRef" type="GroupOfDistributionAssignmentsRefStructure" substitutionGroup="GroupOfEntitiesRef_">
+		<xsd:annotation>
+			<xsd:documentation>Reference to a GROUP OF DISTRIBUTION ASSIGNMENTs.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:complexType name="GroupOfDistributionAssignmentsRefStructure">
+		<xsd:annotation>
+			<xsd:documentation>Type for Reference to a GROUP OF DISTRIBUTION ASSIGNMENTs.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="GroupOfEntitiesRefStructure">
+				<xsd:attribute name="ref" type="GroupOfDistributionAssignmentsIdType" use="required">
+					<xsd:annotation>
+						<xsd:documentation>Identifier of a GROUP OF DISTRIBUTION ASSIGNMENTs.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:element name="GroupOfDistributionAssignments" abstract="false" substitutionGroup="GroupOfEntities">
+		<xsd:annotation>
+			<xsd:documentation>A convenience grouping of DISTRIBUTION ASSIGNMENTs that are commonly used together
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:complexContent>
+				<xsd:restriction base="GroupOfDistributionAssignments_VersionStructure">
+					<xsd:sequence>
+						<xsd:sequence>
+							<xsd:group ref="EntityInVersionGroup" minOccurs="0"/>
+						</xsd:sequence>
+						<xsd:sequence>
+							<xsd:group ref="DataManagedObjectGroup"/>
+						</xsd:sequence>
+						<xsd:sequence>
+							<xsd:group ref="GroupOfEntitiesGroup"/>
+						</xsd:sequence>
+						<xsd:sequence>
+							<xsd:group ref="GroupOfDistributionAssignmentsGroup"/>
+						</xsd:sequence>
+					</xsd:sequence>
+					<xsd:attribute name="id" type="GroupOfDistributionAssignmentsIdType"/>
+				</xsd:restriction>
+			</xsd:complexContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:complexType name="GroupOfDistributionAssignments_VersionStructure">
+		<xsd:annotation>
+			<xsd:documentation>Type for GROUP OF DISTRIBUTION ASSIGNMENTs.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="GroupOfEntities_VersionStructure">
+				<xsd:sequence>
+					<xsd:group ref="GroupOfDistributionAssignmentsGroup"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:group name="GroupOfDistributionAssignmentsGroup">
+		<xsd:annotation>
+			<xsd:documentation>Elements for GROUP OF DISTRIBUTION ASSIGNMENTs.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="members" type="distributionAssignmentRefs_RelStructure" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>DISTRIBUTION ASSIGNMENTs in Group.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
 	<!-- ====TYPE OF SALES OFFER PACKAGE ======================================== -->
 	<xsd:complexType name="typesOfSalesOfferPackage_RelStructure">
 		<xsd:annotation>
@@ -832,4 +933,97 @@ Rail transport, Roads and Road transport
 			<xsd:extension base="TypeOfEntity_VersionStructure"/>
 		</xsd:complexContent>
 	</xsd:complexType>
+	<!-- ==== ACCESS RIGHT IN PRODUCT ELEMENT CONSUMPTION POLICY ======= -->
+	<xsd:element name="AccessRightInProductConsumptionRequirement" substitutionGroup="ConsumptionRequirement_">
+		<xsd:annotation>
+			<xsd:documentation>The definition of a ELEMENT CONSUMPTION POLICY defining which state a ACCESS RIGHT IN PRODUCT must be in (recorded via CustomerPurchasePackageElementAccesses)</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:complexContent>
+				<xsd:restriction base="AccessRightInProductConsumptionRequirement_VersionedChildStructure">
+					<xsd:sequence>
+						<xsd:sequence>
+							<xsd:group ref="VersionedChildGroup"/>
+						</xsd:sequence>
+						<xsd:sequence>
+							<xsd:group ref="ConsumptionRequirementGroup"/>
+						</xsd:sequence>
+						<xsd:sequence>
+							<xsd:group ref="AccessRightInProductConsumptionRequirementGroup"/>
+						</xsd:sequence>
+					</xsd:sequence>
+					<xsd:attribute name="id" type="AccessRightInProductConsumptionRequirementIdType"/>
+				</xsd:restriction>
+			</xsd:complexContent>
+		</xsd:complexType>
+	</xsd:element> 
+	<xsd:complexType name="AccessRightInProductConsumptionRequirement_VersionedChildStructure">
+		<xsd:annotation>
+			<xsd:documentation>Type for ACCESS RIGHT IN PRODUCT ELEMENT CONSUMPTION POLICY.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="ConsumptionRequirement_VersionedChildStructure">
+				<xsd:sequence>
+					<xsd:group ref="AccessRightInProductConsumptionRequirementGroup"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:group name="AccessRightInProductConsumptionRequirementGroup">
+		<xsd:annotation>
+			<xsd:documentation>Elements for ACCESS RIGHT IN PRODUCT ELEMENT CONSUMPTION POLICY.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element ref="AccessRightInProductRef"/>
+			<xsd:element name="AccessNumber" type="xsd:integer" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Number of access of this specific instance.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+	<!-- ==== ACCESS RIGHT IN PRODUCT CONSUMPTION UTILISATION ======= -->
+	<xsd:element name="AccessRightInProductConsumption" abstract="false" substitutionGroup="ElementConsumption_">
+		<xsd:annotation>
+			<xsd:documentation>The definition of a CONSUMPTION UTILISATION defining which ACCESS RIGHT IN PRODUCT that is to be processed</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:complexContent>
+				<xsd:restriction base="AccessRightInProductConsumption_VersionedChildStructure">
+					<xsd:sequence>
+						<xsd:group ref="VersionedChildGroup"/>
+						<xsd:group ref="ElementConsumptionGroup"/>
+						<xsd:group ref="AccessRightInProductConsumptionGroup"/>
+					</xsd:sequence>
+					<xsd:attribute name="id" type="AccessRightInProductElementConsumptionIdType"/>
+				</xsd:restriction>
+			</xsd:complexContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:complexType name="AccessRightInProductConsumption_VersionedChildStructure">
+		<xsd:annotation>
+			<xsd:documentation>Type for ACCESS RIGHT IN PRODUCT ELEMENT CONSUMPTION POLICY.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="ElementConsumption_VersionedChildStructure">
+				<xsd:sequence>
+					<xsd:group ref="AccessRightInProductConsumptionGroup"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:group name="AccessRightInProductConsumptionGroup">
+		<xsd:annotation>
+			<xsd:documentation>Elements for ACCESS RIGHT IN PRODUCT ELEMENT CONSUMPTION POLICY.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element ref="AccessRightInProductRef"/>
+			<xsd:element name="AccessNumber" type="xsd:integer" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Number of access of this specific instance.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+	
 </xsd:schema>
