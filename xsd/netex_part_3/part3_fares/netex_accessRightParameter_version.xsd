@@ -101,6 +101,9 @@
 				<Date>
 					<Modified>2021-01-25</Modified>Add GroupOfTariffZonesRef to NetworkValidityParametersGroup
 				</Date>
+				<Date>
+					<Modified>2021-11-03</Modified>Add SpecificationRequirementGroup to GenericParameterAssignment
+				</Date>
 				<Description>
 					<p>NeTEx is a European CEN standard for the exchange of Public Transport data including timetables.</p>
 					<p>This sub-schema describes the FARE ACCESS RIGHT PARAMETER types.</p>
@@ -725,6 +728,9 @@ Rail transport, Roads and Road transport
 						<xsd:sequence>
 							<xsd:group ref="GenericParameterAssignmentGroup"/>
 						</xsd:sequence>
+						<xsd:sequence>
+							<xsd:group ref="SpecificationRequirementGroup"/>
+						</xsd:sequence>
 					</xsd:sequence>
 					<xsd:attribute name="id" type="GenericParameterAssignmentIdType"/>
 				</xsd:restriction>
@@ -739,6 +745,7 @@ Rail transport, Roads and Road transport
 			<xsd:extension base="ValidityParameterAssignment_VersionStructure">
 				<xsd:sequence>
 					<xsd:group ref="GenericParameterAssignmentGroup"/>
+					<xsd:group ref="SpecificationRequirementGroup"/>
 				</xsd:sequence>
 			</xsd:extension>
 		</xsd:complexContent>
@@ -768,6 +775,28 @@ Rail transport, Roads and Road transport
 			<xsd:element name="includes" type="genericParameterAssignments_RelStructure" minOccurs="0">
 				<xsd:annotation>
 					<xsd:documentation>Assignments Logically included in this group. Groups are combined acording to the Operator.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+	<xsd:group name="SpecificationRequirementGroup">
+		<xsd:annotation>
+			<xsd:documentation>Elements for describing required information</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="requiredType" type="NameOfClass" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Type of class that must be specified.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="requiredElementName" type="xsd:NCName" minOccurs="0" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Name of element that must be specified.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="requiredInContextType" type="ContextTypeEnumeration" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The context in which the validity parameter assignment must be made specific by specifying the required type.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 		</xsd:sequence>
