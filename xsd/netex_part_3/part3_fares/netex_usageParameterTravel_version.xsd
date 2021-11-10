@@ -434,11 +434,18 @@ Rail transport, Roads and Road transport
 					<xsd:documentation>Event triggering end of usage period.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="StandardDuration" type="xsd:duration" minOccurs="0">
+			<xsd:choice minOccurs="0">
+			<xsd:element name="StandardDuration" type="xsd:duration">
 				<xsd:annotation>
 					<xsd:documentation>Duration of  USAGE VALIDITY PERIOD.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
+				<xsd:element name="SteppedDuration" type="SteppedDurationStructure">
+					<xsd:annotation>
+						<xsd:documentation>Duration of VALIDITY PERIOD expressed by steps traveled</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+			</xsd:choice>
 			<xsd:element name="ActivationMeans" type="ActivationMeansListOfEnumerations" minOccurs="0">
 				<xsd:annotation>
 					<xsd:documentation>Means of activating start of period.</xsd:documentation>
@@ -466,6 +473,33 @@ Rail transport, Roads and Road transport
 			</xsd:element>
 		</xsd:sequence>
 	</xsd:group>
+	<xsd:complexType name="SteppedDurationStructure">
+		<xsd:annotation>
+			<xsd:documentation></xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="InitialStepDuration" type="xsd:duration">
+				<xsd:annotation>
+					<xsd:documentation>Duration of first step</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="SubsequentStepsDuration" type="xsd:duration">
+				<xsd:annotation>
+					<xsd:documentation>Duration of subsequent steps</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="MaximumDuration" type="xsd:duration" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Maximum duration (upper limit for total duration)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="StepUnit" type="StepLimitUnitEnumeration">
+				<xsd:annotation>
+					<xsd:documentation>Unit in which steps are counted</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
 	<xsd:group name="UsageValidityPeriodFixedPeriodGroup">
 		<xsd:annotation>
 			<xsd:documentation>Elements to specify a fixed period.</xsd:documentation>
