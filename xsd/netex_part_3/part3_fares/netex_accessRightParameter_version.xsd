@@ -784,23 +784,32 @@ Rail transport, Roads and Road transport
 			<xsd:documentation>Elements for describing required information</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
-			<xsd:element name="requiredType" type="NameOfClass" minOccurs="0">
+			<xsd:element name="RequiredType" type="NameOfClass" minOccurs="0">
 				<xsd:annotation>
 					<xsd:documentation>Type of class that must be specified.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="requiredElementName" type="xsd:NCName" minOccurs="0" maxOccurs="unbounded">
+			<xsd:element name="requiredElements" type="ListOfRequiredElements" minOccurs="0">
 				<xsd:annotation>
-					<xsd:documentation>Name of element that must be specified.</xsd:documentation>
+					<xsd:documentation>List of elements that must be specified.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="requiredInContextType" type="ContextTypeEnumeration" minOccurs="0">
+			<xsd:element name="RequiredInContext" type="ContextTypeEnumeration" minOccurs="0">
 				<xsd:annotation>
 					<xsd:documentation>The context in which the validity parameter assignment must be made specific by specifying the required type.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 		</xsd:sequence>
 	</xsd:group>
+	<xsd:complexType name="ListOfRequiredElements">
+		<xsd:sequence>
+			<xsd:element name="RequiredElement" type="xsd:NCName" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Name of element that must be specified.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
 	<xsd:element name="GenericParameterAssignmentInContext" abstract="false" substitutionGroup="AccessRightParameterAssignment_">
 		<xsd:annotation>
 			<xsd:documentation>Optimisation: Can be used without id constraintA VALIDITY PARAMETER ASSIGNMENT specifying practical parameters during a TRAVEL GenericATION, within a given fare structure (e.g. the origin or destination zone in a zone-counting system).</xsd:documentation>
