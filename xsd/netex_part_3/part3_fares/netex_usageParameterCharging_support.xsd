@@ -278,12 +278,12 @@ Rail transport, Roads and Road transport
 	</xsd:simpleType>
 	<xsd:element name="SecurityPolicyRef" type="SecurityPolicyRefStructure" substitutionGroup="UsageParameterRef">
 		<xsd:annotation>
-			<xsd:documentation>Reference to a SECURITY POLICY usage parameter. +v1.1</xsd:documentation>
+			<xsd:documentation>Reference to a SECURITY POLICY usage parameter. </xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
 	<xsd:complexType name="SecurityPolicyRefStructure">
 		<xsd:annotation>
-			<xsd:documentation>Type for Reference to a SUBSCRIBING usage parameter.</xsd:documentation>
+			<xsd:documentation>Type for Reference to a SECURITY POLICY usage parameter.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:simpleContent>
 			<xsd:restriction base="UsageParameterRefStructure">
