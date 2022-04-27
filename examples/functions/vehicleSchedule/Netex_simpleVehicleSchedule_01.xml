@@ -303,10 +303,10 @@ There is one DUTY ops:Duty:dty_01 with TWO DUTY PARTS
 							<DayType version="any" id="xj:DT_01">
 								<alternativeTexts>
 									<AlternativeText version="any" id="xj:DT_01" attributeName="Name" useForLanguage="fr">
-										<Text lang="fr">Tous les jours sauf pour les jours fÈriÈs</Text>
+										<Text lang="fr">Tous les jours sauf pour les jours f√©ri√©s</Text>
 									</AlternativeText>
 									<AlternativeText version="any" id="xj:DT_01" attributeName="Name" useForLanguage="de">
-										<Text lang="de">Jeden Tag auﬂer an Feiertagen</Text>
+										<Text lang="de">Jeden Tag au√üer an Feiertagen</Text>
 									</AlternativeText>
 									<AlternativeText version="any" id="xj:DT_01" attributeName="Name" useForLanguage="it">
 										<Text lang="it">Tutti i giorni eccetto i giorni festivi</Text>
