@@ -362,6 +362,11 @@ Rail transport, Roads and Road transport
 						<xsd:documentation>POINT within FARE SECTION tat which element ends.</xsd:documentation>
 					</xsd:annotation>
 				</xsd:element>
+			  <xsd:element name="TravelValidityDirection" type="RelativeDirectionEnumeration" minOccurs="0">
+			    <xsd:annotation>
+			      <xsd:documentation>Direction of travel which is allowed (forward, backwards or both)</xsd:documentation>
+			    </xsd:annotation>
+			  </xsd:element>
 			</xsd:choice>
 		</xsd:sequence>
 	</xsd:group>
