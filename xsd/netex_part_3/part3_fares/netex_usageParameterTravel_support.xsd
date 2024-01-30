@@ -724,20 +724,20 @@ Rail transport, Roads and Road transport
 			<xsd:documentation>Allowed values for ONBOARD VALIDITY</xsd:documentation>
 		</xsd:annotation>
 		<xsd:restriction base="xsd:normalizedString">
-			<xsd:enumeration value="validAtBoardingTime">
+			<xsd:enumeration value="mustBeValidAtBoardingTime">
 				<xsd:annotation>
 					<xsd:documentation>The access right is considered to be valid temporally on the same PT RIDE LEG if it was valid at boarding time.
 						Typically used when the traveller is required to validate when boarding on each PT RIDE LEG.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:enumeration>
-			<xsd:enumeration value="validAtStartOfServiceJourney">
+			<xsd:enumeration value="mustBeValidAtStartOfServiceJourney">
 				<xsd:annotation>
 					<xsd:documentation>The access right is considered to be valid temporally on the same PT RIDE LEG if it was valid at this SERVICE JOURNEY's first SCHEDULED STOP POINT.
 						Typically used when the traveller can board a vehicle without validating as long as the traveller already have a temporally valid access right.
 					In addition, since the actual place of boarding is unknown, the controller may ask the traveller's departure stop in and compare the answer to the JOURNEY PATTERN STOP TIMES</xsd:documentation>
 				</xsd:annotation>
 			</xsd:enumeration>
-			<xsd:enumeration value="validAtAllTimesWhileOnboard">
+			<xsd:enumeration value="mustBeValidAtAllTimesWhileOnboard">
 				<xsd:annotation>
 					<xsd:documentation>The access right must be temporally valid at all times when the passenger is onboard. Typically used when the traveller can board a vehicle without validating as long as the traveller already have a temporally valid access right.</xsd:documentation>
 				</xsd:annotation>
