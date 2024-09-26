@@ -104,6 +104,9 @@
 				<Date><Modified>2021-09-01</Modified>FIX - Post newmodes merge  Remove ambigous use of VehicleModes (drop from Organisation validity parameters).
 					    Add MobilityServiceConstraintZone to Network validity parameters.
 				</Date>
+				<Date>
+					<Modified>2021-11-03</Modified>Add SpecificationRequirementGroup to GenericParameterAssignment
+				</Date>
 				<Description>
 					<p>NeTEx is a European CEN standard for the exchange of Public Transport data including timetables.</p>
 					<p>This sub-schema describes the FARE ACCESS RIGHT PARAMETER types.</p>
@@ -790,6 +793,9 @@ Rail transport, Roads and Road transport
 						<xsd:sequence>
 							<xsd:group ref="GenericParameterAssignmentGroup"/>
 						</xsd:sequence>
+						<xsd:sequence>
+							<xsd:group ref="SpecificationRequirementGroup"/>
+						</xsd:sequence>
 					</xsd:sequence>
 					<xsd:attribute name="id" type="GenericParameterAssignmentIdType"/>
 				</xsd:restriction>
@@ -804,6 +810,7 @@ Rail transport, Roads and Road transport
 			<xsd:extension base="ValidityParameterAssignment_VersionStructure">
 				<xsd:sequence>
 					<xsd:group ref="GenericParameterAssignmentGroup"/>
+					<xsd:group ref="SpecificationRequirementGroup"/>
 				</xsd:sequence>
 			</xsd:extension>
 		</xsd:complexContent>
@@ -837,6 +844,37 @@ Rail transport, Roads and Road transport
 			</xsd:element>
 		</xsd:sequence>
 	</xsd:group>
+	<xsd:group name="SpecificationRequirementGroup">
+		<xsd:annotation>
+			<xsd:documentation>Elements for describing required information</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="RequiredType" type="NameOfClass" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Type of class that must be specified.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="requiredElements" type="ListOfRequiredElements" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>List of elements that must be specified.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="RequiredInContext" type="ContextTypeEnumeration" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The context in which the validity parameter assignment must be made specific by specifying the required type.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:group>
+	<xsd:complexType name="ListOfRequiredElements">
+		<xsd:sequence>
+			<xsd:element name="RequiredElement" type="xsd:NCName" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Name of element that must be specified.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
 	<xsd:element name="GenericParameterAssignmentInContext" abstract="false" substitutionGroup="AccessRightParameterAssignment_">
 		<xsd:annotation>
 			<xsd:documentation>Optimisation: Can be used without id constraintA VALIDITY PARAMETER ASSIGNMENT specifying practical parameters during a TRAVEL GenericATION, within a given fare structure (e.g. the origin or destination zone in a zone-counting system).</xsd:documentation>

@@ -105,6 +105,21 @@ Rail transport, Roads and Road transport
 			<xsd:enumeration value="other"/>
 		</xsd:restriction>
 	</xsd:simpleType>
+	<xsd:simpleType name="ContextTypeEnumeration">
+		<xsd:annotation>
+			<xsd:documentation>Allowed values for ContextType</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:normalizedString"> 
+			<xsd:enumeration value="offering"/>
+			<xsd:enumeration value="booking"/>
+			<xsd:enumeration value="reservation"/>
+			<xsd:enumeration value="sale"/>
+			<xsd:enumeration value="fulfilment"/>
+			<xsd:enumeration value="activation"/>
+			<xsd:enumeration value="consumption"/>
+			<xsd:enumeration value="revalidation"/> 
+		</xsd:restriction>
+	</xsd:simpleType>
 	<!-- === VALIDITY PARAMETER====================================================== -->
 	<xsd:simpleType name="ValidityParameterAssignmentIdType">
 		<xsd:annotation>
