@@ -949,10 +949,6 @@ Rail transport, Roads and Road transport
 			</xsd:element>
 		</xsd:sequence>
 	</xsd:group>
-
-
-
-
 	<!-- ==GROUP OF CUSTOMER PURCHASE PARAMETER ASSIGNMENTS ============================================================ -->
 	<xsd:complexType name="groupsOfCustomerPurchaseParameterAssignments_RelStructure">
 		<xsd:annotation>
@@ -1012,7 +1008,6 @@ Rail transport, Roads and Road transport
 			<xsd:element ref="CustomerPurchaseParameterAssignmentRef" minOccurs="2" maxOccurs="unbounded"/>
 		</xsd:sequence>
 	</xsd:group>
-
 	<xsd:complexType name="customerPurchaseParameterAssignmentRefs_RelStructure">
 		<xsd:annotation>
 			<xsd:documentation>Type for a list of CUSTOMER PURCHASE PARAMETER ASSIGNMENT REFs.</xsd:documentation>
@@ -1025,7 +1020,6 @@ Rail transport, Roads and Road transport
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
-
 	<!-- ==== CUSTOMER PURCHASE PACKAGE ELEMENT CONSUMPTION REQUIREMENT ======= -->
 	<xsd:element name="CustomerPurchasePackageElementConsumptionRequirement" substitutionGroup="ConsumptionRequirement_">
 		<xsd:annotation>
@@ -1067,9 +1061,6 @@ Rail transport, Roads and Road transport
 			<xsd:element ref="CustomerPurchasePackageElementRef"/>
 		</xsd:sequence>
 	</xsd:group>
-
-
-
 	<!-- ==== CUSTOMER PURCHASE PACKAGE ELEMENT CONSUMPTION ======= -->
 	<xsd:element name="CustomerPurchasePackageElementConsumption" abstract="false" substitutionGroup="ElementConsumption_">
 		<xsd:annotation>
@@ -1109,5 +1100,4 @@ Rail transport, Roads and Road transport
 			<xsd:element ref="CustomerPurchasePackageElementRef"/>
 		</xsd:sequence>
 	</xsd:group>
-
 </xsd:schema>

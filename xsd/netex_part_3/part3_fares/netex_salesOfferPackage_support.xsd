@@ -321,7 +321,6 @@ Rail transport, Roads and Road transport
 		</xsd:annotation>
 		<xsd:restriction base="ElementConsumptionPolicyIdType"/>
 	</xsd:simpleType>
-	
 	<!-- ====ACCESS RIGHT IN PRODUCT ELEMENT CONSUMPTION======================================================== -->
 	<xsd:simpleType name="AccessRightInProductElementConsumptionIdType">
 		<xsd:annotation>
@@ -329,6 +328,5 @@ Rail transport, Roads and Road transport
 		</xsd:annotation>
 		<xsd:restriction base="ElementConsumptionIdType"/>
 	</xsd:simpleType>
-	
 	<!-- =============================================================== -->
 </xsd:schema>
