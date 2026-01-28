@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2008 (http://www.altova.com) by Nicholas Knowles Knowles (Kizoom Ltd) -->
 <xsd:schema xmlns="http://www.netex.org.uk/netex" xmlns:netex="http://www.netex.org.uk/netex" xmlns:siri="http://www.siri.org.uk/siri" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.netex.org.uk/netex" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.1" id="netex_salesTransaction_support">
 	<xsd:include schemaLocation="netex_salesContract_support.xsd"/>
 	<!-- =============================================================== -->
-	
 	<xsd:annotation>
 		<xsd:appinfo>
 			<Metadata xmlns="http://www.govtalk.gov.uk/CM/gms-xs">
@@ -11,8 +9,7 @@
 				<Audience>e-service developers</Audience>
 				<Coverage>Europe</Coverage>
 				<Creator>Arne Seime</Creator>
-				<Date>
-					<Created>2021-08-10</Created>
+				<Date><Created>2021-08-10</Created>
 					Add Fare Contract log entries related to validation and control
 				</Date>
 				<Description>
@@ -49,7 +46,8 @@
 				<Type>Standard</Type>
 			</Metadata>
 		</xsd:appinfo>
-		<xsd:documentation>NeTEx: CUSTOMER ACCOUNT USE identifier types.</xsd:documentation>	</xsd:annotation>
+		<xsd:documentation>NeTEx: CUSTOMER ACCOUNT USE identifier types.</xsd:documentation>
+	</xsd:annotation>
 	<!-- ====VALIDATION ENTRY.======================================================== -->
 	<xsd:simpleType name="ValidationEntryIdType">
 		<xsd:annotation>
@@ -154,7 +152,6 @@
 			</xsd:restriction>
 		</xsd:simpleContent>
 	</xsd:complexType>
-
 	<!-- ====FULFILMENT ENTRY.======================================================== -->
 	<xsd:simpleType name="FulfilmentEntryIdType">
 		<xsd:annotation>

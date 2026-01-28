@@ -30,8 +30,7 @@
 				</Date>
 				<Date><Modified>2021-01-08</Modified>NewModes:  DistanceMatrix add STarteetingPointRef and EndMeeting{pointRefnt
 				</Date>
-				<Date>
-					<Modified>2021-02-05</Modified>Add DynamicDistanceMatrixElement for on-the-fly creation when pre-computing all possible combinations is not feasible
+				<Date><Modified>2021-02-05</Modified>Add DynamicDistanceMatrixElement for on-the-fly creation when pre-computing all possible combinations is not feasible
 				</Date>
 				<Description>
 					<p>NeTEx is a European CEN standard for the exchange of Public Transport data including timetables.</p>
@@ -225,8 +224,6 @@ Rail transport, Roads and Road transport
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
-
-
 	<xsd:element name="DistanceMatrixElement_" type="PriceableObject_VersionStructure" abstract="true" substitutionGroup="PriceableObject">
 		<xsd:annotation>
 			<xsd:documentation>Dummy SERVICE JOURNEY Supertype.</xsd:documentation>
@@ -532,7 +529,6 @@ Rail transport, Roads and Road transport
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
-
 	<!-- == DISTANCE MATRIX ELEMENT View-->
 	<xsd:element name="DistanceMatrixElementView" type="DistanceMatrixElement_DerivedViewStructure" abstract="false" substitutionGroup="DerivedView">
 		<xsd:annotation>

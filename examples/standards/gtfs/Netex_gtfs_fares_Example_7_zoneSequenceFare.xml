@@ -186,25 +186,25 @@ v1.1 Revised to use Tarifff
 										</validityParameters>
 										<IncludesGroupingType>XOR</IncludesGroupingType>
 										<includes>
-											<GenericParameterAssignment version="any" order="1" id="mygtfsxm:BOILERPLATE_ZS@access@details">
+											<GenericParameterAssignment version="any" order="1" id="mygtfsxm:BOILERPLATE_ZS@access@details@1">
 												<FareStructureElementRef version="any" ref="mygtfsxm:F1"/>
 											</GenericParameterAssignment>
-											<GenericParameterAssignment version="any" order="2" id="mygtfsxm:BOILERPLATE_ZS@access@details">
+											<GenericParameterAssignment version="any" order="2" id="mygtfsxm:BOILERPLATE_ZS@access@details@2">
 												<FareStructureElementRef version="any" ref="mygtfsxm:F2"/>
 											</GenericParameterAssignment>
-											<GenericParameterAssignment version="any" order="3" id="mygtfsxm:BOILERPLATE_ZS@access@details">
+											<GenericParameterAssignment version="any" order="3" id="mygtfsxm:BOILERPLATE_ZS@access@details@3">
 												<FareStructureElementRef version="any" ref="mygtfsxm:F3"/>
 											</GenericParameterAssignment>
-											<GenericParameterAssignment version="any" order="4" id="mygtfsxm:BOILERPLATE_ZS@access@details">
+											<GenericParameterAssignment version="any" order="4" id="mygtfsxm:BOILERPLATE_ZS@access@details@4">
 												<FareStructureElementRef version="any" ref="mygtfsxm:F4"/>
 											</GenericParameterAssignment>
-											<GenericParameterAssignment version="any" order="5" id="mygtfsxm:BOILERPLATE_ZS@access@details">
+											<GenericParameterAssignment version="any" order="5" id="mygtfsxm:BOILERPLATE_ZS@access@details@5">
 												<FareStructureElementRef version="any" ref="mygtfsxm:F5"/>
 											</GenericParameterAssignment>
-											<GenericParameterAssignment version="any" order="6" id="mygtfsxm:BOILERPLATE_ZS@access@details">
+											<GenericParameterAssignment version="any" order="6" id="mygtfsxm:BOILERPLATE_ZS@access@details@6">
 												<FareStructureElementRef version="any" ref="mygtfsxm:F6"/>
 											</GenericParameterAssignment>
-											<GenericParameterAssignment version="any" order="7" id="mygtfsxm:BOILERPLATE_ZS@access@details">
+											<GenericParameterAssignment version="any" order="7" id="mygtfsxm:BOILERPLATE_ZS@access@details@7">
 												<FareStructureElementRef version="any" ref="mygtfsxm:F7"/>
 											</GenericParameterAssignment>
 										</includes>

@@ -46,11 +46,9 @@
 				</Date>
 				<Date><Modified>2020-10-16</Modified>New Modes: Add accessCode value to ActivationMeans enumeration
 				</Date>
-				<Date>
-					<Modified>2020-12-10</Modified>Add ActivationRequirementEnumeration
+				<Date><Modified>2020-12-10</Modified>Add ActivationRequirementEnumeration
 				</Date>
-				<Date>
-					<Modified>2020-12-10</Modified>FIX - Add ActivationMeansListOfEnumerations
+				<Date><Modified>2020-12-10</Modified>FIX - Add ActivationMeansListOfEnumerations
 				</Date>
 				<Description>
 					<p>NeTEx is a European CEN standard for the exchange of Public Transport data including timetables.</p>

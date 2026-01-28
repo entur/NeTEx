@@ -143,8 +143,6 @@ Rail transport, Roads and Road transport
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
-	
-	
 	<!-- === GENERIC PARAMETER====================================================== -->
 	<xsd:simpleType name="GenericParameterAssignmentIdType">
 		<xsd:annotation>

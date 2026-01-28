@@ -949,7 +949,7 @@ Rail transport, Roads and Road transport
 				</xsd:restriction>
 			</xsd:complexContent>
 		</xsd:complexType>
-	</xsd:element> 
+	</xsd:element>
 	<xsd:complexType name="AccessRightInProductConsumptionRequirement_VersionedChildStructure">
 		<xsd:annotation>
 			<xsd:documentation>Type for ACCESS RIGHT IN PRODUCT ELEMENT CONSUMPTION POLICY.</xsd:documentation>
@@ -1018,5 +1018,4 @@ Rail transport, Roads and Road transport
 			</xsd:element>
 		</xsd:sequence>
 	</xsd:group>
-	
 </xsd:schema>

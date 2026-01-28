@@ -31,7 +31,7 @@
 	<xsd:include schemaLocation="netex_accessRightParameter_support.xsd"/>
 	<xsd:include schemaLocation="netex_usageParameter_version.xsd"/>
 	<xsd:include schemaLocation="netex_distanceMatrixElement_version.xsd"/>
-	<xsd:include schemaLocation="netex_timeStructureFactor_version.xsd"></xsd:include>
+	<xsd:include schemaLocation="netex_timeStructureFactor_version.xsd"/>
 	<!-- ======================================================================= -->
 	<xsd:annotation>
 		<xsd:appinfo>
@@ -263,7 +263,7 @@ Rail transport, Roads and Road transport
 			<xsd:element ref="TariffRef" minOccurs="0"/>
 			<xsd:element ref="FareStructureElementRef" minOccurs="0"/>
 			<xsd:element ref="FareElementInSequenceRef" minOccurs="0"/>
-			<xsd:choice  minOccurs="0">
+			<xsd:choice minOccurs="0">
 				<xsd:element ref="DistanceMatrixElementRef"/>
 				<xsd:element ref="DynamicDistanceMatrixElement"/>
 			</xsd:choice>

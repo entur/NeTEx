@@ -52,8 +52,7 @@
 				<Date><Modified>2020.05.10</Modified>New Modes: Add MediumAccess DEvicesfor Account
 					  Add smoker to Customer.
 				</Date>
-				<Date>
-					<Modified>2020-11-20</Modified>  Align with TM
+				<Date><Modified>2020-11-20</Modified>  Align with TM
 					Add customerAccountEntries to CustomerAccount to store CUSTOMER ACCOUNT LOG entries
 				</Date>
 				<Date><Modified>2021.01.10</Modified>New Modes: Add EMail and Phone  verification flag
