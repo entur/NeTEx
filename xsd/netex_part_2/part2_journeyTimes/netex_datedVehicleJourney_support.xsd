@@ -33,7 +33,7 @@
 					<Requires>http://www.netex.org.uk/schemas/2.0/xsd/netex_framework/netex_genericFramework/netex_pointAndLinkSequence_support.xsd</Requires>
 				</Relation>
 				<Rights>Unclassified
- <Copyright>CEN, Crown Copyright 2009-2014</Copyright>
+					<Copyright>CEN, Crown Copyright 2009-2014</Copyright>
 				</Rights>
 				<Source>
 					<ul>
@@ -43,13 +43,13 @@
 				<Status>Version 1.0</Status>
 				<Subject>
 					<Category>Arts, recreation and travel, Tourism, Travel (tourism), Transport,
-Air transport, Airports,
-Ports and maritime transport, Ferries (marine),
-Public transport, Bus services, Coach services, Bus stops and stations,
-Rail transport, Railway stations and track, Train services, Underground trains,
-Business and industry, Transport, Air transport , Ports and maritime transport, Public transport,
-Rail transport, Roads and Road transport
-</Category>
+						Air transport, Airports,
+						Ports and maritime transport, Ferries (marine),
+						Public transport, Bus services, Coach services, Bus stops and stations,
+						Rail transport, Railway stations and track, Train services, Underground trains,
+						Business and industry, Transport, Air transport , Ports and maritime transport, Public transport,
+						Rail transport, Roads and Road transport
+					</Category>
 					<Project>CEN TC278 WG3 SG9.</Project>
 				</Subject>
 				<Title>NeTEx DATED VEHICLE JOURNEY identifier types.</Title>
@@ -65,7 +65,7 @@ Rail transport, Roads and Road transport
 		</xsd:annotation>
 		<xsd:restriction base="VehicleJourneyIdType"/>
 	</xsd:simpleType>
-	<xsd:element name="DatedVehicleJourneyRef" type="DatedVehicleJourneyRefStructure" substitutionGroup="VehicleJourneyRef">
+	<xsd:element name="DatedVehicleJourneyRef" type="VehicleJourneyRefStructure" substitutionGroup="JourneyRef">
 		<xsd:annotation>
 			<xsd:documentation>Reference to a DATED VEHICLE JOURNEY.</xsd:documentation>
 		</xsd:annotation>
@@ -91,7 +91,7 @@ Rail transport, Roads and Road transport
 		</xsd:annotation>
 		<xsd:restriction base="DatedVehicleJourneyIdType"/>
 	</xsd:simpleType>
-	<xsd:element name="NormalDatedVehicleJourneyRef" type="NormalDatedVehicleJourneyRefStructure" substitutionGroup="DatedVehicleJourneyRef">
+	<xsd:element name="NormalDatedVehicleJourneyRef" type="VehicleJourneyRefStructure" substitutionGroup="JourneyRef">
 		<xsd:annotation>
 			<xsd:documentation>Reference to a NORMAL DATED VEHICLE JOURNEY.</xsd:documentation>
 		</xsd:annotation>
@@ -101,7 +101,7 @@ Rail transport, Roads and Road transport
 			<xsd:documentation>Type for a reference to a NORMAL DATED VEHICLE JOURNEY.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:simpleContent>
-			<xsd:restriction base="DatedVehicleJourneyRefStructure">
+			<xsd:restriction base="VehicleJourneyRefStructure">
 				<xsd:attribute name="ref" type="NormalDatedVehicleJourneyIdType" use="required">
 					<xsd:annotation>
 						<xsd:documentation>Identifier of NORMAL DATED VEHICLE JOURNEY.</xsd:documentation>
@@ -133,34 +133,8 @@ Rail transport, Roads and Road transport
 			<xsd:enumeration value="other"/>
 		</xsd:restriction>
 	</xsd:simpleType>
-	<!-- === DATED SERVICE JOURNEY====================================================== -->
-	<xsd:simpleType name="DatedServiceJourneyIdType">
-		<xsd:annotation>
-			<xsd:documentation>Type for identifier of a DATED SERVICE JOURNEY.</xsd:documentation>
-		</xsd:annotation>
-		<xsd:restriction base="ServiceJourneyIdType"/>
-	</xsd:simpleType>
-	<xsd:element name="DatedServiceJourneyRef" type="DatedServiceJourneyRefStructure" substitutionGroup="ServiceJourneyRef">
-		<xsd:annotation>
-			<xsd:documentation>Reference to a DATED SERVICE JOURNEY.</xsd:documentation>
-		</xsd:annotation>
-	</xsd:element>
-	<xsd:complexType name="DatedServiceJourneyRefStructure">
-		<xsd:annotation>
-			<xsd:documentation>Type for a reference to a DATED SERVICE JOURNEY.</xsd:documentation>
-		</xsd:annotation>
-		<xsd:simpleContent>
-			<xsd:restriction base="ServiceJourneyRefStructure">
-				<xsd:attribute name="ref" type="DatedServiceJourneyIdType" use="required">
-					<xsd:annotation>
-						<xsd:documentation>Identifier of DATED SERVICE JOURNEY.</xsd:documentation>
-					</xsd:annotation>
-				</xsd:attribute>
-			</xsd:restriction>
-		</xsd:simpleContent>
-	</xsd:complexType>
 	<!-- ===DEAD RUN====================================================== -->
-	<!-- ===Special Service====================================================== -->
+	<!-- ===Service Journey====================================================== -->
 	<xsd:simpleType name="DatedSpecialServiceIdType">
 		<xsd:annotation>
 			<xsd:documentation>Type for identifier of a DATED SPECIAL SERVICE.</xsd:documentation>
