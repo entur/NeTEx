@@ -367,7 +367,7 @@ Rail transport, Roads and Road transport
 						<xsd:documentation>Type of fare for which product can be exchanged. +v2.1</xsd:documentation>
 					</xsd:annotation>
 				</xsd:element>
-				<xsd:element name="ExchangableTo" type="ExchangableToEnumeration" default="anyProduct">
+				<xsd:element name="ExchangableTo" type="ExchangeableToEnumeration" default="anyProduct">
 					<xsd:annotation>
 						<xsd:documentation>DEPRECATED - misspelt, use ExchangeableTo instead. -v2.1</xsd:documentation>
 					</xsd:annotation>
