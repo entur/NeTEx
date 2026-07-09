@@ -361,16 +361,18 @@ Rail transport, Roads and Road transport
 					<xsd:documentation>Fare class to which can exchange, if specifically limited.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="ExchangeableTo" type="ExchangeableToEnumeration" default="anyProduct" minOccurs="0">
-				<xsd:annotation>
-					<xsd:documentation>Type of fare for which product can be exchanged. +v2.1</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
-			<xsd:element name="ExchangableTo" type="ExchangableToEnumeration" default="anyProduct" minOccurs="0">
-				<xsd:annotation>
-					<xsd:documentation>DEPRECATED - misspelt, use ExchangeableTo instead. -v2.1</xsd:documentation>
-				</xsd:annotation>
-			</xsd:element>
+			<xsd:choice minOccurs="0">
+				<xsd:element name="ExchangeableTo" type="ExchangeableToEnumeration" default="anyProduct">
+					<xsd:annotation>
+						<xsd:documentation>Type of fare for which product can be exchanged. +v2.1</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="ExchangableTo" type="ExchangableToEnumeration" default="anyProduct">
+					<xsd:annotation>
+						<xsd:documentation>DEPRECATED - misspelt, use ExchangeableTo instead. -v2.1</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+			</xsd:choice>
 		</xsd:sequence>
 	</xsd:group>
 	<!-- ==== REFUNDING================================================= -->
