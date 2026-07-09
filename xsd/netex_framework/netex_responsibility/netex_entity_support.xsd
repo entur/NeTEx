@@ -17,6 +17,8 @@
 				<Date>
 					<Modified>2010-11-05</Modified>
 				</Date>
+				<Date><Modified>2026-07-09</Modified>Add correctly spelt Exchangeable* / IsExchangeable values to NameOfClass alongside deprecated misspelt forms.
+				</Date>
 				<Description>
 					<p>NeTEx - Network Exchange. This subschema defines data Modification base types.</p>
 				</Description>
@@ -949,6 +951,15 @@ Rail transport, Roads and Road transport
 			<xsd:enumeration value="ExchangableUntilDuration"/>
 			<xsd:enumeration value="ExchangableUntilIntervalRef"/>
 			<xsd:enumeration value="ExchangableUntilPercentUse"/>
+			<xsd:enumeration value="ExchangeableFromAnyTime"/>
+			<xsd:enumeration value="ExchangeableFromDuration"/>
+			<xsd:enumeration value="ExchangeableFromIntervalRef"/>
+			<xsd:enumeration value="ExchangeableFromPercentUse"/>
+			<xsd:enumeration value="ExchangeableTo"/>
+			<xsd:enumeration value="ExchangeableUntilAnyTime"/>
+			<xsd:enumeration value="ExchangeableUntilDuration"/>
+			<xsd:enumeration value="ExchangeableUntilIntervalRef"/>
+			<xsd:enumeration value="ExchangeableUntilPercentUse"/>
 			<xsd:enumeration value="Exchanging"/>
 			<xsd:enumeration value="ExchangingRef"/>
 			<xsd:enumeration value="Exclude"/>
@@ -1376,6 +1387,7 @@ Rail transport, Roads and Road transport
 			<xsd:enumeration value="IsEmergencyExit"/>
 			<xsd:enumeration value="IsEntry"/>
 			<xsd:enumeration value="IsExchangable"/>
+			<xsd:enumeration value="IsExchangeable"/>
 			<xsd:enumeration value="IsExit"/>
 			<xsd:enumeration value="IsExternal"/>
 			<xsd:enumeration value="IsFacingAisle"/>
