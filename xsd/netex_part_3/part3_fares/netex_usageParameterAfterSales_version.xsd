@@ -180,17 +180,17 @@ Rail transport, Roads and Road transport
 				</xsd:element>
 				<xsd:element name="ExchangableFromAnyTime" type="EmptyType">
 					<xsd:annotation>
-						<xsd:documentation>DEPRECATED - misspelt, use ExchangeableFromAnyTime instead. -v2.1</xsd:documentation>
+						<xsd:documentation>DEPRECATED due to misspelling, use ExchangeableFromAnyTime instead. -v2.1</xsd:documentation>
 					</xsd:annotation>
 				</xsd:element>
 				<xsd:element name="ExchangableFromDuration" type="xsd:duration">
 					<xsd:annotation>
-						<xsd:documentation>DEPRECATED - misspelt, use ExchangeableFromDuration instead. -v2.1</xsd:documentation>
+						<xsd:documentation>DEPRECATED due to misspelling, use ExchangeableFromDuration instead. -v2.1</xsd:documentation>
 					</xsd:annotation>
 				</xsd:element>
 				<xsd:element name="ExchangableFromPercentUse" type="xsd:decimal">
 					<xsd:annotation>
-						<xsd:documentation>DEPRECATED - misspelt, use ExchangeableFromPercentUse instead. -v2.1</xsd:documentation>
+						<xsd:documentation>DEPRECATED due to misspelling, use ExchangeableFromPercentUse instead. -v2.1</xsd:documentation>
 					</xsd:annotation>
 				</xsd:element>
 			</xsd:choice>
@@ -202,7 +202,7 @@ Rail transport, Roads and Road transport
 				</xsd:element>
 				<xsd:element name="ExchangableFromIntervalRef" type="TimeIntervalRefStructure">
 					<xsd:annotation>
-						<xsd:documentation>DEPRECATED - misspelt, use ExchangeableFromIntervalRef instead. -v2.1</xsd:documentation>
+						<xsd:documentation>DEPRECATED due to misspelling, use ExchangeableFromIntervalRef instead. -v2.1</xsd:documentation>
 					</xsd:annotation>
 				</xsd:element>
 			</xsd:choice>
@@ -224,17 +224,17 @@ Rail transport, Roads and Road transport
 				</xsd:element>
 				<xsd:element name="ExchangableUntilAnyTime" type="EmptyType">
 					<xsd:annotation>
-						<xsd:documentation>DEPRECATED - misspelt, use ExchangeableUntilAnyTime instead. -v2.1</xsd:documentation>
+						<xsd:documentation>DEPRECATED due to misspelling, use ExchangeableUntilAnyTime instead. -v2.1</xsd:documentation>
 					</xsd:annotation>
 				</xsd:element>
 				<xsd:element name="ExchangableUntilDuration" type="xsd:duration">
 					<xsd:annotation>
-						<xsd:documentation>DEPRECATED - misspelt, use ExchangeableUntilDuration instead. -v2.1</xsd:documentation>
+						<xsd:documentation>DEPRECATED due to misspelling, use ExchangeableUntilDuration instead. -v2.1</xsd:documentation>
 					</xsd:annotation>
 				</xsd:element>
 				<xsd:element name="ExchangableUntilPercentUse" type="xsd:decimal">
 					<xsd:annotation>
-						<xsd:documentation>DEPRECATED - misspelt, use ExchangeableUntilPercentUse instead. -v2.1</xsd:documentation>
+						<xsd:documentation>DEPRECATED due to misspelling, use ExchangeableUntilPercentUse instead. -v2.1</xsd:documentation>
 					</xsd:annotation>
 				</xsd:element>
 			</xsd:choice>
@@ -246,7 +246,7 @@ Rail transport, Roads and Road transport
 				</xsd:element>
 				<xsd:element name="ExchangableUntilIntervalRef" type="TimeIntervalRefStructure">
 					<xsd:annotation>
-						<xsd:documentation>DEPRECATED - misspelt, use ExchangeableUntilIntervalRef instead. -v2.1</xsd:documentation>
+						<xsd:documentation>DEPRECATED due to misspelling, use ExchangeableUntilIntervalRef instead. -v2.1</xsd:documentation>
 					</xsd:annotation>
 				</xsd:element>
 			</xsd:choice>
@@ -369,7 +369,7 @@ Rail transport, Roads and Road transport
 				</xsd:element>
 				<xsd:element name="ExchangableTo" type="ExchangeableToEnumeration" default="anyProduct">
 					<xsd:annotation>
-						<xsd:documentation>DEPRECATED - misspelt, use ExchangeableTo instead. -v2.1</xsd:documentation>
+						<xsd:documentation>DEPRECATED due to misspelling, use ExchangeableTo instead. -v2.1</xsd:documentation>
 					</xsd:annotation>
 				</xsd:element>
 			</xsd:choice>
