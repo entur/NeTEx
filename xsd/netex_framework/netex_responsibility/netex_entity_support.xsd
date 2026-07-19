@@ -1463,7 +1463,7 @@ Rail transport, Roads and Road transport
 					<xsd:documentation>DEPRECATED due to misspelling, use IsExchangeable instead. -v2.1</xsd:documentation>
 				</xsd:annotation>
 			</xsd:enumeration>
-			<xsd:enumeration value="IsExchangeable"/>
+			<xsd:enumeration value="IsExchangeable">
 				<xsd:annotation>
 					<xsd:documentation>Replaces previously missplet value. +v2.1</xsd:documentation>
 				</xsd:annotation>
