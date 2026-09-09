@@ -156,6 +156,11 @@ Rail transport, Roads and Road transport
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:element ref="PrivateCode" minOccurs="0"/>
+			<xsd:element name="AssociatedContract" type="ContractRef_RelStructure" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Contract associated with this RESPONSIBILITY SET.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
 			<xsd:element name="roles" type="responsibilityRoleAssignments_RelStructure" minOccurs="0">
 				<xsd:annotation>
 					<xsd:documentation>Roles defined by this RESPONSIBILITY SET.</xsd:documentation>
@@ -345,6 +350,18 @@ Rail transport, Roads and Road transport
 		</xsd:annotation>
 		<xsd:complexContent>
 			<xsd:extension base="TypeOfEntity_VersionStructure"/>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="ContractRef_RelStructure">
+		<xsd:annotation>
+			<xsd:documentation>Type for a reference to a CONTRACT.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="containmentAggregationStructure">
+				<xsd:choice>
+					<xsd:element ref="ContractRef"/>
+				</xsd:choice>
+			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
 	<!-- ======================================================================= -->
